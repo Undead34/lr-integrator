@@ -1,2 +1,0 @@
-2025-01-07 19:00:35,188 - lr_integrator.logger - ERROR - Scheduler._process() takes 1 positional argument but 2 were given
-2025-01-07 19:00:50,275 - lr_integrator.logger - ERROR - 'NoneType' object has no attribute 'info'
