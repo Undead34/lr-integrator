@@ -1,0 +1,30 @@
+[project]
+entity = "towerbank"
+version = "0.1.0"
+description = "Programa que recopila datos de varios endpoints usando un scheduler independiente por fuente."
+
+[[sources]]
+name = "trend_micro_vision_one"
+type = "rest"
+interval = 5
+enabled = true
+
+[sources.config]
+endpoint = "https://api.visionone.trendmicro.com/v1/source_one"
+method = "GET"
+headers = { Authorization = "Bearer tu_token_aqui" }
+querystring = { limit = 100, startDateTime = { type = "%Y-%m-%dT%H:%M:%SZ", value = "10 minutes ago" } }
+
+[sources.config.authentication]
+type = "Bearer"
+token = "XYZ-1234567890"
+expiration = 2025-12-31T23:59:59-04:00
+
+[sources.config.pagination]
+strategy = "next-link"
+next_key = "next"
+elements_key = "items"
+
+[sources.config.logger]
+max_files = 10
+size = "10MB"

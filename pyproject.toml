@@ -1,16 +1,27 @@
 [project]
 name = "lr-integrator"
 version = "0.1.0"
-description = ""
+description = "Open Source tool to facilitate the integration of various technologies with LogRhythm SIEM."
 authors = [
     {name = "Undead34",email = "maizogabriel@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "toml (>=0.10.2,<0.11.0)",
+    "schedule (>=1.2.2,<2.0.0)",
+    "humanfriendly (>=10.0,<11.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+pyinstaller = "^6.11.1"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^6.11.1"
